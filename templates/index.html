@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Live Buidling System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"  crossorigin="anonymous">
+</head>
+<style>
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+.color-th{
+    background-color: #A460ED;
+}
+</style> 
+<body>
+    
+    <h3 class="text-center my-5">Meters Data</h3>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col table-responsive-sm  d-flex justify-content-center">
+                <table class="table table-striped w-75">
+                    <thead class="color-th">
+                      <tr>
+                        <th>ID</th>
+                        <th>Meters Name</th>
+                        <th>Link</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for meter in objects %}
+                      <tr>
+                        <td>{{meter.id}}</td>
+                        <td>{{meter.label}}</td>
+                        <td><a class="btn color-th" href="http://127.0.0.1:5000/{{meter.id}}">click</a></td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                  
+            </div>
+            
+        </div>
+      </div>
+      
+ 
+</body>
+ 
+</html>
